@@ -3,7 +3,6 @@ import "./markdown.css";
 import "highlight.js/styles/github-dark.css";
 import hljs from "highlight.js";
 import { marked } from "marked";
-// import { mdToPdf } from "md-to-pdf";
 
 const renderer = new marked.Renderer();
 const MathJax = window.MathJax;
