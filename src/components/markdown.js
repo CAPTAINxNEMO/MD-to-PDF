@@ -25,24 +25,24 @@ const Markdown = () => {
 
     useEffect(() => {
         if (htmlPreviewRef.current) {
-        const tempDiv = document.createElement("div");
-        tempDiv.innerHTML = markdown;
-        MathJax.typesetPromise([tempDiv]).then(() => {
-            htmlPreviewRef.current.innerHTML = tempDiv.innerHTML;
-        }).catch((err) => {
-            console.error(err.message);
-        });
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = markdown;
+            MathJax.typesetPromise([tempDiv]).then(() => {
+                htmlPreviewRef.current.innerHTML = tempDiv.innerHTML;
+            }).catch((err) => {
+                console.error(err.message);
+            });
         }
     }, [markdown]);
 
     const handleKeyDown = (event) => {
         if (event.key === "Tab") {
-        event.preventDefault();
-        const start = event.target.selectionStart;
-        const end = event.target.selectionEnd;
-        const value = event.target.value;
-        setText(value.substring(0, start) + " ".repeat(4) + value.substring(end));
-        event.target.selectionStart = event.target.selectionEnd = start + 4;
+            event.preventDefault();
+            const start = event.target.selectionStart;
+            const end = event.target.selectionEnd;
+            const value = event.target.value;
+            setText(value.substring(0, start) + " ".repeat(4) + value.substring(end));
+            event.target.selectionStart = event.target.selectionEnd = start + 4;
         }
     };
 
@@ -53,7 +53,7 @@ const Markdown = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ htmlContent: markdown }),
+                body: JSON.stringify({ markdownContent: markdown }),
             });
 
             if (!response.ok) {
