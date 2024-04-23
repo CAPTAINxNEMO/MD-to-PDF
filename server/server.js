@@ -3,12 +3,6 @@ import { launch } from 'puppeteer';
 import cors from 'cors';
 import { marked } from 'marked';
 import hljs from 'highlight.js';
-// import fs from 'fs';
-// import path from 'path';
-// import { fileURLToPath } from 'url';
-
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 3001;
@@ -39,10 +33,6 @@ app.post('/convert-to-pdf', async (req, res) => {
 
         const browser = await launch();
         const page = await browser.newPage();
-
-        // Load the CSS content
-        // const cssPath = path.join(__dirname, 'github-dark.css');
-        // const cssContent = fs.readFileSync(cssPath, 'utf8');
 
         // Inject the CSS into the page
         await page.addStyleTag({ path: 'server/github-dark.css' });
