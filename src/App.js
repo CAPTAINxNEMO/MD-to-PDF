@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Markdown from './components/markdown';
+import Markdown from './components/markdown.js';
 
 function App() {
 	return (

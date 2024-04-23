@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "markdown",
   "version": "0.1.0",
   "private": true,
@@ -6,15 +7,14 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "highlight.js": "^11.9.0",
     "marked": "^12.0.2",
-    "md-to-pdf": "^5.2.4",
-    "puppeteer": "^22.6.5",
+    "puppeteer": "^22.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "testing-library": "^0.0.2",
     "web-vitals": "^3.5.2"
   },
   "scripts": {
@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "server/server.js",
+    "server": "node server/server.js",
     "dev": "concurrently \"npm run start\" \"npm run server\""
   },
   "eslintConfig": {
