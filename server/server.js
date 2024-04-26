@@ -42,7 +42,9 @@ try {
 		`<html><head></head><body>${htmlContent}</body></html>`,
 		{ waitUntil: "load" }
 	);
+	await page.addStyleTag({ path: "server/markdown.css" });
 	await page.addStyleTag({ path: "server/github-dark.css" });
+
 	await page.addScriptTag({ url: 'https://polyfill.io/v3/polyfill.min.js?features=es6' });
 	await page.addScriptTag({
 		url: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
