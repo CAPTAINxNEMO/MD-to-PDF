@@ -51,6 +51,7 @@ try {
 		id: 'MathJax-script',
 		async: true
 	});
+	await new Promise(resolve => setTimeout(resolve, 1000));
 
 	const pdf = await page.pdf({
 		format: "A4",
