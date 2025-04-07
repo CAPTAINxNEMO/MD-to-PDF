@@ -2,7 +2,9 @@
 
 A full-featured markdown editor with real-time preview and PDF export functionality. This React application allows you to write markdown content and see the rendered HTML instantly. When you're ready, you can convert your document to a PDF with a single click.
 
-![Markdown Editor](https://via.placeholder.com/800x400)
+![Markdown Editor](https://github.com/user-attachments/assets/15449d50-e783-4b31-9bbc-4dc18c747579)
+![View in PDF after download](https://github.com/user-attachments/assets/ddca3cc0-01a3-4209-bb67-58cc06c4cd1e)
+
 
 ## Features
 
