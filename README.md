@@ -1,70 +1,139 @@
-# Getting Started with Create React App
+# Markdown Editor with Live Preview and PDF Export
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-featured markdown editor with real-time preview and PDF export functionality. This React application allows you to write markdown content and see the rendered HTML instantly. When you're ready, you can convert your document to a PDF with a single click.
 
-## Available Scripts
+![Markdown Editor](https://via.placeholder.com/800x400)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Split-screen Interface**: Edit markdown on the left, see rendered HTML on the right
+- **Real-time Preview**: Instantly see changes as you type
+- **Syntax Highlighting**: Code blocks with syntax highlighting using highlight.js
+- **PDF Export**: Convert your markdown to professionally formatted PDFs
+- **MathJax Support**: Include mathematical formulas using LaTeX syntax
+- **Tab Support**: Automatically insert spaces when pressing Tab
+- **Modern UI**: Clean interface with Tailwind CSS styling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React.js, Tailwind CSS
+- **Backend**: Express.js
+- **PDF Generation**: Puppeteer
+- **Markdown Parsing**: marked
+- **Syntax Highlighting**: highlight.js
+- **Math Rendering**: MathJax
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js (v14 or higher)
+- npm or yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Setup Steps
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/markdown-editor.git
+   cd markdown-editor
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   This will start both the React frontend and Express backend using concurrently.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Open your browser and navigate to:
+   ```
+   http://localhost:3000
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Type or paste markdown content in the left panel
+2. See the rendered HTML in the right panel
+3. Click the "Convert to PDF" button to generate and download a PDF version
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Supported Markdown Features
 
-## Learn More
+- Headers (# H1, ## H2, etc.)
+- Lists (ordered and unordered)
+- Code blocks with syntax highlighting
+- Links and images
+- Bold and italic text
+- Blockquotes
+- Tables
+- Mathematical equations using LaTeX syntax
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Example Markdown
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```markdown
+# My Document
 
-### Code Splitting
+## Introduction
+This is a **bold statement** and *italicized text*.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Code Example
+```javascript
+function helloWorld() {
+  console.log("Hello, world!");
+}
+```
 
-### Analyzing the Bundle Size
+## Math Example
+When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Project Structure
 
-### Making a Progressive Web App
+```
+markdown-editor/
+├── public/                 # Static files
+├── server/                 # Express backend
+│   ├── server.js           # Server entry point
+│   ├── github-dark.css     # Syntax highlighting styles
+│   └── markdown.css        # PDF styling
+├── src/                    # React frontend
+│   ├── components/         # React components
+│   │   ├── markdown.js     # Main markdown editor component
+│   │   └── markdown.css    # Styling for the preview
+│   ├── App.js              # Main application component
+│   ├── App.css             # Application styling
+│   └── index.js            # React entry point
+└── package.json            # Project dependencies and scripts
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Development
 
-### Advanced Configuration
+### Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- `npm start`: Starts the React development server
+- `npm run build`: Builds the app for production
+- `npm run server`: Starts the Express server
+- `npm run dev`: Runs both the client and server concurrently
 
-### Deployment
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- [marked](https://github.com/markedjs/marked) - Markdown parser and compiler
+- [highlight.js](https://highlightjs.org/) - Syntax highlighting
+- [Puppeteer](https://pptr.dev/) - Headless Chrome Node.js API
+- [MathJax](https://www.mathjax.org/) - Mathematics rendering
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
